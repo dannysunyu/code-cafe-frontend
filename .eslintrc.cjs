@@ -36,5 +36,12 @@ module.exports = {
 
     // 你可以在这里添加更多自定义规则
     'no-console': 'off',
+    'import/order': [
+      'error',
+      {
+        groups: ['builtin', 'external', 'internal', 'parent', 'sibling', 'index'],
+        'newlines-between': 'always',
+      },
+    ],
   },
 };

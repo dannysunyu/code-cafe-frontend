@@ -1,8 +1,9 @@
 import CoffeeLogo from '../assets/images/logo.svg';
+import './Header.css';
 
 function Header() {
   return (
-    <header className="header">
+    <header className="header-component">
       <img src={CoffeeLogo} alt="coffee logo" />
       <h1>Code Cafe</h1>
     </header>
