@@ -8,4 +8,16 @@ export default defineConfig({
     react(),
     eslint(), // 添加 ESLint 插件
   ],
+  server: {
+    proxy: {
+      // '/api': {
+      //   target: 'http://localhost:3030',
+      //   changeOrigin: true,
+      // },
+      '/api': {
+        target: 'https://d12b-58-136-63-236.ngrok-free.app',
+        changeOrigin: true,
+      },
+    },
+  },
 });
