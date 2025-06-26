@@ -1,6 +1,6 @@
 {
-  "homepage": "https://dannysunyu.github.io/code-cafe-frontend/",
-  "name": "code-cafe",
+  "homepage": "https://dannysunyu.github.io/code-cafe-frontend",
+  "name": "code-cafe-frontend",
   "private": true,
   "version": "0.0.0",
   "type": "module",
