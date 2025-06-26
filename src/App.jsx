@@ -10,13 +10,15 @@ import DetailItem from './components/DetailItem';
 
 const BASE_PATH = '/code-cafe-frontend';
 
+const API_ROOT = 'https://55f7-184-82-113-69.ngrok-free.app';
+
 function App() {
   const [items, setItems] = useState([]);
 
   useEffect(() => {
     async function fetchItems() {
       try {
-        const result = await axios.get('https://55f7-184-82-113-69.ngrok-free.app/api/items', {
+        const result = await axios.get(`${API_ROOT}/api/items`, {
           headers: {
             'ngrok-skip-browser-warning': '1',
           },
