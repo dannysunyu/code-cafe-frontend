@@ -10,7 +10,7 @@ import DetailItem from './components/DetailItem';
 
 const BASE_PATH = '/code-cafe-frontend';
 
-const API_ROOT = 'https://hamster-finer-notably.ngrok-free.app/';
+const API_ROOT = 'https://hamster-finer-notably.ngrok-free.app';
 
 function App() {
   const [items, setItems] = useState([]);
