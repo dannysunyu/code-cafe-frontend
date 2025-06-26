@@ -1,8 +1,12 @@
 import { useEffect, useState } from 'react';
 import axios from 'axios';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
 import Header from './components/Header';
 import Home from './components/Home';
+import NotFound from './components/NotFound';
+import Details from './components/Details';
+import DetailItem from './components/DetailItem';
 
 function App() {
   const [items, setItems] = useState([]);
@@ -25,10 +29,17 @@ function App() {
   }, []);
 
   return (
-    <div>
+    <Router>
       <Header />
-      <Home items={items} />
-    </div>
+      <Routes>
+        <Route path="/details" element={<Details items={items} />}>
+          <Route path=":id" element={<DetailItem items={items} />} />
+          <Route index element={<div>No Item Selected</div>} />
+        </Route>
+        <Route path="/" element={<Home items={items} />} />
+        <Route path="*" element={<NotFound />} />
+      </Routes>
+    </Router>
   );
 }
 
