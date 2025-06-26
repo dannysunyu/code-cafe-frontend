@@ -8,7 +8,7 @@ export default defineConfig({
     react(),
     eslint(), // 添加 ESLint 插件
   ],
-  // base: './',
+  base: '/code-cafe-frontend',
   server: {
     proxy: {
       '/api': {

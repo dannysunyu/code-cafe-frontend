@@ -8,6 +8,8 @@ import NotFound from './components/NotFound';
 import Details from './components/Details';
 import DetailItem from './components/DetailItem';
 
+const BASE_PATH = '/code-cafe-frontend';
+
 function App() {
   const [items, setItems] = useState([]);
 
@@ -29,7 +31,7 @@ function App() {
   }, []);
 
   return (
-    <Router>
+    <Router basename={BASE_PATH}>
       <Header />
       <Routes>
         <Route path="/details" element={<Details items={items} />}>
