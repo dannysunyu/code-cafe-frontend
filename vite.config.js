@@ -4,11 +4,11 @@ import eslint from 'vite-plugin-eslint';
 
 // https://vite.dev/config/
 export default defineConfig({
-  base: '/code-cafe-frontend',
   plugins: [
     react(),
     eslint(), // 添加 ESLint 插件
   ],
+  base: '/code-cafe-frontend',
   server: {
     proxy: {
       // '/api': {
