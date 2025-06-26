@@ -10,11 +10,11 @@ export default defineConfig({
   ],
   base: '/code-cafe-frontend',
   server: {
-    proxy: {
-      '/api': {
-        target: 'https://55f7-184-82-113-69.ngrok-free.app',
-        changeOrigin: true,
-      },
-    },
+    // proxy: {
+    //   '/api': {
+    //     target: 'https://55f7-184-82-113-69.ngrok-free.app',
+    //     changeOrigin: true,
+    //   },
+    // },
   },
 });

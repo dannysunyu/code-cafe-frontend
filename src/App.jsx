@@ -16,7 +16,7 @@ function App() {
   useEffect(() => {
     async function fetchItems() {
       try {
-        const result = await axios.get('/api/items', {
+        const result = await axios.get('https://55f7-184-82-113-69.ngrok-free.app/api/items', {
           headers: {
             'ngrok-skip-browser-warning': '1',
           },
