@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useReducer, useState } from 'react';
 import axios from 'axios';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
@@ -7,6 +7,7 @@ import Home from './components/Home';
 import NotFound from './components/NotFound';
 import Details from './components/Details';
 import DetailItem from './components/DetailItem';
+import { cartReducer, CartTypes, initialCartState } from './reducers/cartReducer';
 
 const BASE_PATH = '/code-cafe-frontend';
 
@@ -14,6 +15,9 @@ const API_ROOT = 'https://hamster-finer-notably.ngrok-free.app';
 
 function App() {
   const [items, setItems] = useState([]);
+  const [cart, dispatch] = useReducer(cartReducer, initialCartState);
+
+  const addToCart = (itemId) => dispatch({ type: CartTypes.ADD, itemId });
 
   useEffect(() => {
     async function fetchItems() {
@@ -34,15 +38,18 @@ function App() {
 
   return (
     <Router basename={BASE_PATH}>
-      <Header />
-      <Routes>
-        <Route path="/details" element={<Details items={items} />}>
-          <Route path=":id" element={<DetailItem items={items} />} />
-          <Route index element={<div>No Item Selected</div>} />
-        </Route>
-        <Route path="/" element={<Home items={items} />} />
-        <Route path="*" element={<NotFound />} />
-      </Routes>
+      <Header cart={cart} />
+      {items.length === 0 ? <div>Loading...</div> : (
+        <Routes>
+          <Route path="/details" element={<Details items={items} />}>
+            <Route path=":id" element={<DetailItem items={items} addToCart={addToCart} />} />
+            <Route index element={<div>No Item Selected</div>} />
+          </Route>
+          <Route path="/" element={<Home items={items} />} />
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+      )}
+
     </Router>
   );
 }
