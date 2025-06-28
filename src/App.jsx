@@ -47,7 +47,7 @@ function App() {
             <Route index element={<div>No Item Selected</div>} />
           </Route>
           <Route path="/" element={<Home items={items} />} />
-          <Route path="/cart" element={<Cart cart={cart} items={items} />} />
+          <Route path="/cart" element={<Cart cart={cart} items={items} dispatch={dispatch} />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       )}
