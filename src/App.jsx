@@ -1,6 +1,6 @@
 import { useEffect, useReducer, useState } from 'react';
 import axios from 'axios';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes } from 'react-router';
 
 import Header from './components/Header';
 import Home from './components/Home';

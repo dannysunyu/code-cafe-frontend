@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import { Outlet } from 'react-router-dom';
+import { Outlet } from 'react-router';
 
 import { itemImages } from '../assets/items/index';
 import ItemType from '../types/item';
