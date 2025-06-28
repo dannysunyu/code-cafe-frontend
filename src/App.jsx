@@ -8,6 +8,7 @@ import NotFound from './components/NotFound';
 import Details from './components/Details';
 import DetailItem from './components/DetailItem';
 import { cartReducer, CartTypes, initialCartState } from './reducers/cartReducer';
+import Cart from './components/Cart';
 
 const BASE_PATH = '/code-cafe-frontend';
 
@@ -46,6 +47,7 @@ function App() {
             <Route index element={<div>No Item Selected</div>} />
           </Route>
           <Route path="/" element={<Home items={items} />} />
+          <Route path="/cart" element={<Cart cart={cart} />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       )}
